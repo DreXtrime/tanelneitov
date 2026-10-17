@@ -1,0 +1,38 @@
+name: Deploy to Zone
+on:
+  push:
+    branches:
+      - main
+      - test
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    environment:
+      name: ${{ github.ref_name == 'main' && 'production' || 'test' }}
+      url: ${{ github.ref_name == 'main' && 'https://tanelneitov.eu' || 'https://test.tanelneitov.eu' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+
+      - name: Connect to server over SSH
+        run: |
+          mkdir -p ~/.ssh/
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.HOST_SERVER_IP }} >> ~/.ssh/known_hosts
+
+      - name: Set deploy path
+        id: vars
+        run: |
+          if [ "${{ github.ref_name }}" = "main" ]; then
+            echo "path=~/domeenid/www.tanelneitov.eu/htdocs/" >> "$GITHUB_OUTPUT"
+          else
+            echo "path=~/domeenid/www.tanelneitov.eu/test/" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Deploy site
+        run: |
+          rsync -vrm ./ ${{ secrets.SSH_LOGIN_CREDS }}:${{ steps.vars.outputs.path }} \
+            --exclude='.git' \
+            --exclude='.github'
