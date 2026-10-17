@@ -1,5 +1,5 @@
 # tanelneitov.eu
 
-Some simple html, js and css.  
+Some simple html, js and css. gets deployed automatically.
 
 Don't forget to click start.
