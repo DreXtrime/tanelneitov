@@ -201,103 +201,24 @@
                    target="_blank">LinkedIn</a>
                 <a class="footer-link" href="mailto:tanel.neitov@gmail.com">email-me</a>
                 <a class="footer-link" id="startBtn2" href="#"
-                   style="font-style: italic; font-weight: bold; color: #33c74e" title="Enable XP mode">start</a>
+                   style="font-style: italic; font-weight: bold; color: #33c74e" title="You have found an Easter egg">
+                        <span class="win-icon">
+                            <img src="public/windows.svg" alt="Icon" style="width: 10px; height: 10px;">
+                        </span>
+                    start</a>
             </footer>
         </div>
     </div>
 </div>
 
-<!-- Desktop icons (XP mode) -->
-<div class="d-icon icon-cat">
-    <!-- cat file icon -->
-    <img src="public/cat.webp" alt="cat" style="width: 64px; height: 64px;">
-    <span>cat.gif</span>
-</div>
-
-<div class="d-icon icon-disco" id="iconDisco">
-    <svg width="48" height="48" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="12" cy="14" r="8" fill="#c0c0c0" stroke="#888" stroke-width=".5"/>
-        <ellipse cx="12" cy="14" rx="4" ry="8" fill="none" stroke="#aaa" stroke-width=".5"/>
-        <line x1="4" y1="14" x2="20" y2="14" stroke="#aaa" stroke-width=".5"/>
-        <line x1="12" y1="6" x2="12" y2="4" stroke="#888" stroke-width="1.5"/>
-        <rect x="11" y="1" width="2" height="4" rx="1" fill="#aaa"/>
-        <circle cx="7" cy="10" r="1.2" fill="#f44" opacity=".9"/>
-        <circle cx="17" cy="11" r="1.2" fill="#44f" opacity=".9"/>
-        <circle cx="9" cy="16" r="1.2" fill="#4f4" opacity=".9"/>
-        <circle cx="15" cy="17" r="1.2" fill="#ff0" opacity=".9"/>
-        <circle cx="12" cy="9" r="1.2" fill="#f4f" opacity=".9"/>
-    </svg>
-    <span>Disco.exe</span>
-</div>
-
-<!-- Recycle bin icon -->
-<div class="d-icon d-icon-2 icon-recycle" id="iconRecycle">
-    <img src="public/recycle_bin.png" alt="recycle" style="width: 64px; height: 64px;">
-    <span>Recycle Bin</span>
-</div>
-
-<!-- Disco ball overlay -->
-<div class="disco-ball-overlay">
-    <img src="public/discoball.gif" alt="discoball" style="width: 100px; height: 100px;">
-</div>
-
-<!-- Cat gif popup -->
-<div class="window cat-popup" id="catPopup" style="position:fixed; bottom:48px; right:22px; z-index:800; width:200px;">
-    <div class="title-bar">
-        <div class="title-bar-text">cat.gif</div>
-        <div class="title-bar-controls">
-            <button aria-label="Close" id="catClose"></button>
-        </div>
-    </div>
-    <div class="window-body" style="margin:0; padding:4px;">
-        <img src="public/cat.gif" alt="cat" style="width:100%; display:block;">
-    </div>
-</div>
-
-<!-- Recycle bin popup, TODO: separate inline css -->
-<div class="window recycle-popup" id="recyclePopup"
-     style="position:fixed; top:48px; right:22px; z-index:800; width:320px;">
-    <div class="title-bar">
-        <div class="title-bar-text">Recycle Bin</div>
-        <div class="title-bar-controls">
-            <button aria-label="Close" id="recycleClose"></button>
-        </div>
-    </div>
-    <div class="window-body" style="margin:0; padding:0;">
-        <div style="padding: 4px 8px; font-family: var(--font-xp); font-size: 11px; color: #666; border-bottom: 1px solid #ccc;">
-            2 object(s)
-        </div>
-        <a href="https://www.linkedin.com/in/tanel-erik-neitov/" target="_blank"
-           style="display:flex; align-items:center; gap:10px; padding:8px 12px; text-decoration:none; color:inherit;">
-            <img src="public/linkedin.svg"
-                 style="width:32px; height:32px; flex-shrink:0;" alt="linkedin icon">
-            <div style="font-family: var(--font-xp); font-size: 12px;">
-                <div style="color:#000; font-weight:600;">linkedin_profile.url</div>
-                <div style="color:#666; font-size:11px;">Date: 20/06/2025</div>
-            </div>
-        </a>
-        <a href="https://github.com/DreXtrime/tanelneitov" target="_blank"
-           style="display:flex; align-items:center; gap:10px; padding:8px 12px; text-decoration:none; color:inherit;">
-            <img src="/public/github.svg"
-                 style="width:32px; height:32px; flex-shrink:0;" alt="missing image icon">
-            <div style="font-family: var(--font-xp); font-size: 12px;">
-                <div style="color:#000; font-weight:600;">github_repo_for_this_site.url</div>
-                <div style="color:#666; font-size:11px;">Date: 17/10/2026</div>
-            </div>
-        </a>
-    </div>
-</div>
+<div id="desktop-icons"></div>
 
 <!-- Taskbar -->
 <div class="taskbar" id="taskbar">
     <button class="start-btn" id="startBtn" aria-label="Switch to XP view">
-        <svg width="14" height="14" viewBox="0 0 160 160" aria-hidden="true">
-            <path d="M170 20.7c-33 13.7-49 6-63.2-3.6L90.8 73.5c14.3 9.7 31.5 17.7 63.2 3.5l16.3-56.3z" fill="#91c300"/>
-            <path d="M63 134.2c-14.3-9.6-30-17.6-63-3.9l16.2-56.6c33-13.6 49-5.9 63.3 3.8L63 134.2z" fill="#00b4f1"/>
-            <path d="M82.2 67.3a53.9 53.9 0 0 0-31-11.3c-8.7-.1-19.1 2.4-32.2 7.8L35.2 7.4c33.1-13.7 49-6 63.3 3.7L82.2 67.3z"
-                  fill="#f8682c"/>
-            <path d="M88 83c14.4 9.6 30.3 17.3 63.3 3.6L135 142.8c-33 13.7-48.9 6-63.2-3.7L88.1 83z" fill="#ffc300"/>
-        </svg>
+        <span class="win-icon">
+            <img src="public/windows.svg" alt="Icon" style="width: 17px; height: 17px;">
+        </span>
         start
     </button>
     <div class="taskbar-mid">
