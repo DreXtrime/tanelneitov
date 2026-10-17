@@ -35,4 +35,5 @@ jobs:
         run: |
           rsync -vrm ./ ${{ secrets.SSH_LOGIN_CREDS }}:${{ steps.vars.outputs.path }} \
             --exclude='.git' \
-            --exclude='.github'
+            --exclude='.github' \
+            --delete
