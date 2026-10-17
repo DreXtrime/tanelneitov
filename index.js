@@ -14,7 +14,7 @@ const icons = [
     {
         id: 'recycle',
         label: 'Recycle Bin',
-        img: 'recycle_bin.png',
+        img: 'public/recycle_bin.png',
         alt: 'Recycle bin',
         position: {top: '50px', right: '22px'},
         window: {
