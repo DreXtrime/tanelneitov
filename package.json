@@ -1,0 +1,28 @@
+{
+    "name": "tanelneitov",
+    "version": "1.0.0",
+    "description": "Portfolio site",
+    "homepage": "https://github.com/DreXtrime/tanelneitov#readme",
+    "bugs": {
+        "url": "https://github.com/DreXtrime/tanelneitov/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/DreXtrime/tanelneitov.git"
+    },
+    "license": "ISC",
+    "author": "drextrime",
+    "type": "commonjs",
+    "main": "index.js",
+    "scripts": {
+        "dev": "vite",
+        "serve": "vite preview --host",
+        "build": "vite build",
+        "build:serve": "npm run build && npm run serve",
+        "format": "prettier --write ."
+    },
+    "devDependencies": {
+        "prettier": "^3.9.10",
+        "vite": "^8.3.4"
+    }
+}

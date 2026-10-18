@@ -5,15 +5,43 @@ on:
       - main
       - test
 jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+
+      - name: Set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Upload built files
+        uses: actions/upload-artifact@v7
+        with:
+          name: production-files
+          path: ./dist
+
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
+    needs: build
     environment:
       name: ${{ github.ref_name == 'main' && 'production' || 'test' }}
       url: ${{ github.ref_name == 'main' && 'https://tanelneitov.eu' || 'https://test.tanelneitov.eu' }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@main
+      - name: Download built files
+        uses: actions/download-artifact@v8
+        with:
+          name: production-files
+          path: ./dist
 
       - name: Connect to server over SSH
         run: |
@@ -33,7 +61,5 @@ jobs:
 
       - name: Deploy site
         run: |
-          rsync -vrm ./ ${{ secrets.SSH_LOGIN_CREDS }}:${{ steps.vars.outputs.path }} \
-            --exclude='.git' \
-            --exclude='.github' \
+          rsync -vrm ./dist/ ${{ secrets.SSH_LOGIN_CREDS }}:${{ steps.vars.outputs.path }} \
             --delete

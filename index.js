@@ -1,7 +1,8 @@
 'use strict';
 
 /* State */
-let xpOn = false, minimized = false;
+let xpOn = false,
+    minimized = false;
 const body = document.body;
 const card = document.getElementById('card');
 const winChip = document.getElementById('winChip');
@@ -14,9 +15,9 @@ const icons = [
     {
         id: 'recycle',
         label: 'Recycle Bin',
-        img: 'public/recycle_bin.png',
+        img: 'recycle_bin_icon.webp',
         alt: 'Recycle bin',
-        position: {top: '50px', right: '22px'},
+        position: { top: '50px', right: '22px' },
         window: {
             title: 'Recycle Bin',
             width: '320px',
@@ -27,7 +28,7 @@ const icons = [
                     </div>
                     <a href="https://www.linkedin.com/in/tanel-erik-neitov/" target="_blank"
                        style="display:flex; align-items:center; gap:10px; padding:8px 12px; text-decoration:none; color:inherit;">
-                        <img src="public/linkedin.svg"
+                        <img src="linkedin_icon.svg"
                              style="width:32px; height:32px; flex-shrink:0;" alt="linkedin icon">
                         <div style="font-family: var(--font-xp); font-size: 12px;">
                             <div style="color:#000; font-weight:600;">linkedin_profile.url</div>
@@ -36,7 +37,7 @@ const icons = [
                     </a>
                     <a href="https://github.com/DreXtrime/tanelneitov" target="_blank"
                        style="display:flex; align-items:center; gap:10px; padding:8px 12px; text-decoration:none; color:inherit;">
-                        <img src="public/github.svg"
+                        <img src="github_icon.svg"
                              style="width:32px; height:32px; flex-shrink:0;" alt="missing image icon">
                         <div style="font-family: var(--font-xp); font-size: 12px;">
                             <div style="color:#000; font-weight:600;">github_repo_for_this_site.url</div>
@@ -44,15 +45,15 @@ const icons = [
                         </div>
                     </a>
                 </div>
-            `
-        }
+            `,
+        },
     },
     {
         id: 'about',
         label: 'about_me.txt',
-        img: 'public/about.webp',
+        img: 'about_icon.webp',
         alt: 'icon of a notepad',
-        position: {bottom: '600px', right: '22px'},
+        position: { bottom: '600px', right: '22px' },
         window: {
             title: 'Notepad - about_me.txt',
             width: '600px',
@@ -75,59 +76,58 @@ Good at planning and pretty good at bringing those plans to life if I'd say so m
 
 At home I keep a small homelab for local LLMs, media storage and transcoding, and photo backups. It started as little project and kind of never stopped.
 </pre>
-<img src="public/about_pic.webp" style="width: 64px; display:block;" alt="cat dancing">
-        `
-        }
+<img src="about_pic.webp" style="width: 64px; display:block;" alt="cat dancing">
+        `,
+        },
     },
     {
         id: 'cat',
         label: 'cat.gif',
-        img: 'public/cat.webp',
+        img: 'cat_icon.webp',
         alt: 'Icon of a cat with its paws up',
-        position: {bottom: '50px', right: '22px'},
+        position: { bottom: '50px', right: '22px' },
         window: {
             title: 'cat.gif',
             width: '200px',
-            content: `<img src="public/cat.gif" style="width:100%; display:block;" alt="cat dancing">`
-        }
+            content: `<img src="cat.webp" style="width:100%; display:block;" alt="cat dancing">`,
+        },
     },
     {
         id: 'disco',
         label: 'Disco.exe',
-        img: 'public/discoball.svg',
+        img: 'discoball_icon.svg',
         alt: 'Disco ball',
-        position: {bottom: '150px', right: '22px'},
+        position: { bottom: '150px', right: '22px' },
         onOpen: () => body.classList.add('disco-mode'),
         onClose: () => body.classList.remove('disco-mode'),
         window: {
-            title: 'Disco',
+            title: 'Disco.exe',
             width: '320px',
-            content: `<img src="public/discoball.gif" style="width:100%; display:block;" alt="spinning disco ball">`
-        }
+            content: `<img src="discoball.webp" style="width:100%; display:block;" alt="spinning disco ball">`,
+        },
     },
     {
         id: 'certificate',
         label: 'Certificate.png',
-        img: 'public/certificate_icon.png',
+        img: 'certificate_icon.webp',
         alt: 'Certificate.webp',
-        position: {bottom: '250px', right: '22px'},
+        position: { bottom: '250px', right: '22px' },
         window: {
             title: 'A Certificate from kood// about my studies. Thank you to the staff and fellow students!',
             width: '920px',
-            content: `<img src="public/certificate.webp" style="width:100%; display:block;" alt="certificate of kood">`
-        }
+            content: `<img src="certificate.webp" style="width:100%; display:block;" alt="certificate of kood">`,
+        },
     },
-
 ];
 
 /* Populate the icons on desktop */
-icons.forEach(icon => {
+icons.forEach((icon) => {
     const el = document.createElement('div');
     el.className = 'd-icon';
     el.style.cssText = Object.entries(icon.position)
-        .map(([k, v]) => `${k}:${v}`).join(';');
-    el.innerHTML =
-        `<img src="${icon.img}" alt="${icon.alt}">
+        .map(([k, v]) => `${k}:${v}`)
+        .join(';');
+    el.innerHTML = `<img src="${icon.img}" alt="${icon.alt}">
         <span>${icon.label}</span>`;
     el.addEventListener('click', () => openWindow(icon));
     document.getElementById('desktop-icons').appendChild(el);
@@ -136,9 +136,13 @@ icons.forEach(icon => {
 /* Handle window dragging */
 function makeDraggable(windowEl) {
     const titleBar = windowEl.querySelector('.title-bar');
-    let drag = false, ox = 0, oy = 0, sl = 0, st = 0;
+    let drag = false,
+        ox = 0,
+        oy = 0,
+        sl = 0,
+        st = 0;
 
-    titleBar.addEventListener('mousedown', e => {
+    titleBar.addEventListener('mousedown', (e) => {
         if (e.target.closest('.title-bar-controls')) return;
         drag = true;
         ox = e.clientX;
@@ -152,13 +156,13 @@ function makeDraggable(windowEl) {
         e.preventDefault();
     });
 
-    window.addEventListener('mousemove', e => {
+    window.addEventListener('mousemove', (e) => {
         if (!drag) return;
-        windowEl.style.left = (sl + e.clientX - ox) + 'px';
-        windowEl.style.top = (st + e.clientY - oy) + 'px';
+        windowEl.style.left = sl + e.clientX - ox + 'px';
+        windowEl.style.top = st + e.clientY - oy + 'px';
     });
 
-    window.addEventListener('mouseup', () => drag = false);
+    window.addEventListener('mouseup', () => (drag = false));
 }
 
 /* handle opening/closing windows from the icons */
@@ -173,8 +177,11 @@ function openWindow(icon) {
     const win = document.createElement('div');
     win.className = 'window xp-window visible';
     win.id = `window-${icon.id}`;
-    win.style.cssText = `position:fixed; z-index:800; width:${icon.window.width};` +
-        Object.entries(icon.position).map(([k, v]) => `${k}:${v}`).join(';');
+    win.style.cssText =
+        `position:fixed; z-index:800; width:${icon.window.width};` +
+        Object.entries(icon.position)
+            .map(([k, v]) => `${k}:${v}`)
+            .join(';');
 
     win.innerHTML = `
         <div class="title-bar">
@@ -188,7 +195,7 @@ function openWindow(icon) {
         </div>
     `;
 
-    win.querySelector('[aria-label="Close"]').addEventListener('click', e => {
+    win.querySelector('[aria-label="Close"]').addEventListener('click', (e) => {
         e.stopPropagation();
         if (icon.onClose) icon.onClose();
         win.classList.remove('visible');
@@ -204,8 +211,7 @@ function openWindow(icon) {
 function tick() {
     const d = new Date();
     document.getElementById('clock').textContent =
-        String(d.getHours()).padStart(2, '0') + ':' +
-        String(d.getMinutes()).padStart(2, '0');
+        String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0');
 }
 
 /* Activate XP */
@@ -228,7 +234,7 @@ function deactivateXP(e) {
     body.classList.remove('xp-active', 'xp-minimized');
     body.classList.remove('disco-mode');
 
-    document.querySelectorAll('.xp-window').forEach(win => {
+    document.querySelectorAll('.xp-window').forEach((win) => {
         win.classList.remove('visible');
     });
 
@@ -245,7 +251,7 @@ function setMinimized(v) {
     body.classList.toggle('xp-minimized', minimized);
 }
 
-document.getElementById('btnMin').addEventListener('click', e => {
+document.getElementById('btnMin').addEventListener('click', (e) => {
     e.stopPropagation();
     setMinimized(!minimized);
 });
@@ -260,12 +266,16 @@ winChip.addEventListener('click', () => {
 // document.getElementById('bg').addEventListener('click', activateXP);
 document.getElementById('startBtn').addEventListener('click', deactivateXP);
 document.getElementById('startBtn2').addEventListener('click', activateXP);
-card.addEventListener('click', e => e.stopPropagation());
-document.getElementById('taskbar').addEventListener('click', e => e.stopPropagation());
+card.addEventListener('click', (e) => e.stopPropagation());
+document.getElementById('taskbar').addEventListener('click', (e) => e.stopPropagation());
 
 /* Drag */
-let drag = false, ox = 0, oy = 0, sl = 0, st = 0;
-document.getElementById('winBar').addEventListener('mousedown', e => {
+let drag = false,
+    ox = 0,
+    oy = 0,
+    sl = 0,
+    st = 0;
+document.getElementById('winBar').addEventListener('mousedown', (e) => {
     if (!xpOn || e.target.closest('.win-btns')) return;
     drag = true;
     ox = e.clientX;
@@ -274,15 +284,14 @@ document.getElementById('winBar').addEventListener('mousedown', e => {
     st = parseFloat(card.style.top) || 0;
     e.preventDefault();
 });
-window.addEventListener('mousemove', e => {
+window.addEventListener('mousemove', (e) => {
     if (!drag) return;
-    card.style.left = (sl + e.clientX - ox) + 'px';
-    card.style.top = (st + e.clientY - oy) + 'px';
+    card.style.left = sl + e.clientX - ox + 'px';
+    card.style.top = st + e.clientY - oy + 'px';
 });
-window.addEventListener('mouseup', () => drag = false);
+window.addEventListener('mouseup', () => (drag = false));
 
 /* Disco */
 function toggleDisco() {
     body.classList.toggle('disco-mode');
 }
-
