@@ -14,7 +14,7 @@ const icons = [
     {
         id: 'recycle',
         label: 'Recycle Bin',
-        img: 'public/recycle_bin.png',
+        img: 'public/recycle_bin_icon.webp',
         alt: 'Recycle bin',
         position: {top: '50px', right: '22px'},
         window: {
@@ -27,7 +27,7 @@ const icons = [
                     </div>
                     <a href="https://www.linkedin.com/in/tanel-erik-neitov/" target="_blank"
                        style="display:flex; align-items:center; gap:10px; padding:8px 12px; text-decoration:none; color:inherit;">
-                        <img src="public/linkedin.svg"
+                        <img src="public/linkedin_icon.svg"
                              style="width:32px; height:32px; flex-shrink:0;" alt="linkedin icon">
                         <div style="font-family: var(--font-xp); font-size: 12px;">
                             <div style="color:#000; font-weight:600;">linkedin_profile.url</div>
@@ -36,7 +36,7 @@ const icons = [
                     </a>
                     <a href="https://github.com/DreXtrime/tanelneitov" target="_blank"
                        style="display:flex; align-items:center; gap:10px; padding:8px 12px; text-decoration:none; color:inherit;">
-                        <img src="public/github.svg"
+                        <img src="public/github_icon.svg"
                              style="width:32px; height:32px; flex-shrink:0;" alt="missing image icon">
                         <div style="font-family: var(--font-xp); font-size: 12px;">
                             <div style="color:#000; font-weight:600;">github_repo_for_this_site.url</div>
@@ -50,7 +50,7 @@ const icons = [
     {
         id: 'about',
         label: 'about_me.txt',
-        img: 'public/about.webp',
+        img: 'public/about_icon.webp',
         alt: 'icon of a notepad',
         position: {bottom: '600px', right: '22px'},
         window: {
@@ -82,7 +82,7 @@ At home I keep a small homelab for local LLMs, media storage and transcoding, an
     {
         id: 'cat',
         label: 'cat.gif',
-        img: 'public/cat.webp',
+        img: 'public/cat_icon.webp',
         alt: 'Icon of a cat with its paws up',
         position: {bottom: '50px', right: '22px'},
         window: {
@@ -94,7 +94,7 @@ At home I keep a small homelab for local LLMs, media storage and transcoding, an
     {
         id: 'disco',
         label: 'Disco.exe',
-        img: 'public/discoball.svg',
+        img: 'public/discoball_icon.svg',
         alt: 'Disco ball',
         position: {bottom: '150px', right: '22px'},
         onOpen: () => body.classList.add('disco-mode'),
@@ -108,7 +108,7 @@ At home I keep a small homelab for local LLMs, media storage and transcoding, an
     {
         id: 'certificate',
         label: 'Certificate.png',
-        img: 'public/certificate_icon.png',
+        img: 'public/certificate_icon.webp',
         alt: 'Certificate.webp',
         position: {bottom: '250px', right: '22px'},
         window: {
