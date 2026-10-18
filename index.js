@@ -89,7 +89,7 @@ At home I keep a small homelab for local LLMs, media storage and transcoding, an
         window: {
             title: 'cat.gif',
             width: '200px',
-            content: `<img src="cat.gif" style="width:100%; display:block;" alt="cat dancing">`,
+            content: `<img src="cat.webp" style="width:100%; display:block;" alt="cat dancing">`,
         },
     },
     {
@@ -101,9 +101,9 @@ At home I keep a small homelab for local LLMs, media storage and transcoding, an
         onOpen: () => body.classList.add('disco-mode'),
         onClose: () => body.classList.remove('disco-mode'),
         window: {
-            title: 'Disco',
+            title: 'Disco.exe',
             width: '320px',
-            content: `<img src="discoball.gif" style="width:100%; display:block;" alt="spinning disco ball">`,
+            content: `<img src="discoball.webp" style="width:100%; display:block;" alt="spinning disco ball">`,
         },
     },
     {
