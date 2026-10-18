@@ -227,6 +227,11 @@ function deactivateXP(e) {
     minimized = false;
     body.classList.remove('xp-active', 'xp-minimized');
     body.classList.remove('disco-mode');
+
+    document.querySelectorAll('.xp-window').forEach(win => {
+        win.classList.remove('visible');
+    });
+
     setTimeout(() => {
         if (!xpOn) {
             card.style.cssText = '';
