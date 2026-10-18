@@ -16,8 +16,9 @@
     "main": "index.js",
     "scripts": {
         "dev": "vite",
+        "serve": "vite preview --host",
         "build": "vite build",
-        "start": "vite preview --host",
+        "build:serve": "npm run build && npm run serve",
         "format": "prettier --write ."
     },
     "devDependencies": {
