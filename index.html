@@ -1,238 +1,313 @@
 <!doctype html>
-<html>
-<head>
-    <meta charset=utf8>
-    <meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
-    <link rel="icon" type="image/webp" href="/public/favicon.webp">
-    <link rel="stylesheet" href="/XP.css"/>
-    <link rel="stylesheet" href="/index.css">
-</head>
-<body>
-<title>Tanel Neitov</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<html lang="en">
+    <head>
+        <meta charset="utf8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+        <link rel="icon" type="image/webp" href="favicon.webp" />
+        <link rel="stylesheet" href="/XP.css" />
+        <link rel="stylesheet" href="/index.css" />
+        <title>Tanel Erik Neitov</title>
+    </head>
+    <body>
+        <!-- Wallpaper bg (clickable to activate XP) -->
+        <div class="bg" id="bg">
+            <div class="bg-img"></div>
+            <div class="bg-disco"></div>
+        </div>
 
-<!-- Wallpaper bg (clickable to activate XP) -->
-<div class="bg" id="bg">
-    <div class="bg-img"></div>
-    <div class="bg-disco"></div>
-</div>
+        <!-- Page layout -->
+        <div class="page">
+            <div class="card" id="card">
+                <!-- XP title bar -->
+                <div class="win-bar" id="winBar">
+                    <span class="title-bar-text">Tanel Erik Neitov — Portfolio</span>
+                    <div class="title-bar-controls">
+                        <button aria-label="Minimize" id="btnMin" title="Minimize"></button>
+                        <button aria-label="Maximize" title="Maximize" disabled></button>
+                        <button aria-label="Close" id="btnClose" title="Close"></button>
+                    </div>
+                </div>
 
-<!-- Page layout -->
-<div class="page">
-    <div class="card" id="card">
+                <!-- Content -->
+                <div class="card-body">
+                    <header>
+                        <h1 class="name">
+                            Tanel Erik
+                            <span>Neitov</span>
+                        </h1>
+                        <p class="bio">Always looking for the next thing to build.</p>
+                        <p class="bio">
+                            Unsurprisingly also into variant sudoku:
+                            <a
+                                class="bio-link"
+                                href="https://sudokupad.app/fpuzN4IgzglgXgpiBcBOANCALhNAbO8QBUBDAOxi0QA8RVCBXNACwHsAnBAks6kF2nMGGnYBlNCQAmhFuIAEvfvBkAxCFiwyYhAMYM5TAO7IZWplloBbYkYkyAzBVsyARkwoz9mXYxgzxEAOaYYDIAjAC0iDJMxFo+mjoAdAA6xCn4DDAs5kzmgpmKACIBQTLmtGBoMhAxLJoCVcQyAG6EZj6t0f4y3t0ZWTl5LDIVUhjEXQBmLDm9Pk58TjIAFPOV4tEA5JUMhE0+aEzOPibEAlr0EHsAlNz+LBDiCADaT8AAvsjvnx9fvz8/IBabQQAHZUIE9sQEGheDAAUDaLgUCAITAofAYYi3gBdZCvf7fT6A1qI0Hgy5o6Gw+EkpHkyFUrFEhG4ACs9MpGOphN+xOB8BCHPRmLhuPxPIJfwl3zFUrlfNJ8FsQsZcOlf1lkq16pp/IAHCquVjNeqFbgDSiKcLuXLJWaEMrLQyjaK8fKWQgAGyGkXa920h0+m04t26xXI1HWpmgD3wABMQej9vg7KdnN9OolJttPOT3rTUbVvNjqcjqv+2Nx6D62VyaEyz1AWGqMDAzyeIAASnGAMJx7id2x9gcAFmHlYBzdIbfgLy7vZCA97/dQ3Z7thAE6JU9b7a7Y5HA6HrKXPc9R57INHPb1m+xk5bM7nnZBPcXq89b4HrK/H+Hq9fFcu1fDc/1Arsfw3Lcm0fPdOx/c9Vx/E8/xQ4CezQl8zzvB9pzg19EAHV9bwAy8B0/K8kLIid7yAA=="
+                                target="_blank">
+                                here's one
+                            </a>
+                            .
+                        </p>
+                    </header>
 
-        <!-- XP title bar -->
-        <div class="win-bar" id="winBar">
-            <span class="title-bar-text">Tanel Erik Neitov — Portfolio</span>
-            <div class="title-bar-controls">
-                <button aria-label="Minimize" id="btnMin" title="Minimize"></button>
-                <button aria-label="Maximize" title="Maximize" disabled></button>
-                <button aria-label="Close" id="btnClose" title="Close"></button>
+                    <main>
+                        <p class="section-label">Projects</p>
+                        <div class="projects">
+                            <div class="project">
+                                <div class="project-left">
+                                    <div class="project-title">Voyager + Cloud Cartographer</div>
+                                    <p class="project-desc">My favourite project so far.</p>
+                                    <p class="project-desc">
+                                        Cloud Cartographer: Analysed a sample app before cloud migration, stress-tested
+                                        it, measured resource usage, and produced documents covering findings,
+                                        architecture recommendations, and cost estimates for AWS and GCP.
+                                    </p>
+                                    <p class="project-desc">
+                                        Voyager: took those findings and built the actual infrastructure on GCP with
+                                        Terraform, ArgoCD, GitLab CI, and a full observability stack.
+                                    </p>
+                                    <div class="tags">
+                                        <span class="tag">GCP</span>
+                                        <span class="tag">Terraform</span>
+                                        <span class="tag">Kubernetes</span>
+                                        <span class="tag">ArgoCD</span>
+                                        <span class="tag">GitOps</span>
+                                        <span class="tag">GitLab CI</span>
+                                    </div>
+                                </div>
+                                <div class="project-links">
+                                    <a
+                                        class="link"
+                                        href="https://github.com/DreXtrime/cloud-cartographer"
+                                        target="_blank">
+                                        Cartographer
+                                        <span class="link-arrow">↗</span>
+                                    </a>
+                                    <a class="link" href="https://github.com/DreXtrime/voyager" target="_blank">
+                                        Voyager
+                                        <span class="link-arrow">↗</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="project">
+                                <div class="project-left">
+                                    <div class="project-title">Match-Me</div>
+                                    <p class="project-desc">
+                                        A full-stack people matching social media platform. We had to build the matching
+                                        algorithm and mix real-time chat with regular database requests without them
+                                        stepping on each other. Spent enough time on this one that I added a demo mode
+                                        so you can try it without signing up. Received a fresh coat of polish recently,
+                                        it's a solid project now.
+                                    </p>
+                                    <div class="tags">
+                                        <span class="tag">Java</span>
+                                        <span class="tag">Spring Boot</span>
+                                        <span class="tag">PostgreSQL</span>
+                                        <span class="tag">React</span>
+                                        <span class="tag">TypeScript</span>
+                                        <span class="tag">JWT</span>
+                                        <span class="tag">Team</span>
+                                    </div>
+                                </div>
+                                <div class="project-links">
+                                    <a class="link" href="https://match-me-demo.tanelneitov.eu" target="_blank">
+                                        <div class="recording-light"></div>
+                                        Live (Demo)
+                                        <span class="link-arrow">↗</span>
+                                    </a>
+                                    <a class="link" href="https://github.com/DreXtrime/match-me" target="_blank">
+                                        GitHub
+                                        <span class="link-arrow">↗</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="project">
+                                <div class="project-left">
+                                    <div class="project-title">Orbit</div>
+                                    <p class="project-desc">
+                                        Interactive 3D model of the solar system. Explore planets, adjust orbital
+                                        speeds, add your own celestial bodies, and click any planet for facts and stats.
+                                        Very happy with how this ended up.
+                                    </p>
+                                    <div class="tags">
+                                        <span class="tag">Three.js</span>
+                                        <span class="tag">WebGL</span>
+                                        <span class="tag">JavaScript</span>
+                                        <span class="tag">Automated deployment</span>
+                                    </div>
+                                </div>
+                                <div class="project-links">
+                                    <a class="link" href="https://orbit.tanelneitov.eu" target="_blank">
+                                        <div class="recording-light"></div>
+                                        Live
+                                        <span class="link-arrow">↗</span>
+                                    </a>
+                                    <a
+                                        class="link"
+                                        href="https://github.com/DreXtrime/solar-system-orbit"
+                                        target="_blank">
+                                        GitHub
+                                        <span class="link-arrow">↗</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="project">
+                                <div class="project-left">
+                                    <div class="project-title">Dorm Dash</div>
+                                    <p class="project-desc">
+                                        1–4 player real-time multiplayer arcade game. Compete against friends or AI to
+                                        collect burning embers at a campsite. Shipped under a deadline, and it shows in
+                                        the code, but the final product turned out great.
+                                    </p>
+                                    <div class="tags">
+                                        <span class="tag">Multiplayer</span>
+                                        <span class="tag">Team project</span>
+                                        <span class="tag">NPC AI</span>
+                                        <span class="tag">Automated deployment</span>
+                                    </div>
+                                </div>
+                                <div class="project-links">
+                                    <a class="link" href="https://dorm-dash.tanelneitov.eu" target="_blank">
+                                        <div class="recording-light"></div>
+                                        Live
+                                        <span class="link-arrow">↗</span>
+                                    </a>
+                                    <a class="link" href="https://github.com/DreXtrime/dorm-dash-game" target="_blank">
+                                        GitHub
+                                        <span class="link-arrow">↗</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="project">
+                                <div class="project-left">
+                                    <div class="project-title">WebGL Gallery</div>
+                                    <p class="project-desc">
+                                        A virtual 3D art gallery built in Blender and rendered in the browser with
+                                        Three.js. Features baked lighting, custom models, smooth camera transitions.
+                                        Designed for touchscreens but works on any device.
+                                    </p>
+                                    <div class="tags">
+                                        <span class="tag">JavaScript</span>
+                                        <span class="tag">Three.js</span>
+                                        <span class="tag">Blender</span>
+                                        <span class="tag">Automated deployment</span>
+                                    </div>
+                                </div>
+                                <div class="project-links">
+                                    <a class="link" href="https://gallery.tanelneitov.eu" target="_blank">
+                                        <div class="recording-light"></div>
+                                        Live
+                                        <span class="link-arrow">↗</span>
+                                    </a>
+                                    <a class="link" href="https://github.com/DreXtrime/webgl-gallery" target="_blank">
+                                        GitHub
+                                        <span class="link-arrow">↗</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="project">
+                                <div class="project-left">
+                                    <div class="project-title">Movie API</div>
+                                    <p class="project-desc">
+                                        A Java Spring Boot REST API storing movie info, actors, and genres in
+                                        PostgreSQL. Supports filtering, validation, and pagination.
+                                    </p>
+                                    <div class="tags">
+                                        <span class="tag">Java</span>
+                                        <span class="tag">Spring Boot</span>
+                                        <span class="tag">PostgreSQL</span>
+                                    </div>
+                                </div>
+                                <div class="project-links">
+                                    <a class="link" href="https://github.com/DreXtrime/movie-api" target="_blank">
+                                        GitHub
+                                        <span class="link-arrow">↗</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="project">
+                                <div class="project-left">
+                                    <div class="project-title">Racetrack Info Screens</div>
+                                    <p class="project-desc">
+                                        A digital race management system for a physical racetrack. Tools for officials
+                                        to manage races live, public screens with real-time info. Recovers gracefully
+                                        from power shutdowns.
+                                    </p>
+                                    <div class="tags">
+                                        <span class="tag">JavaScript</span>
+                                        <span class="tag">Socket.io</span>
+                                        <span class="tag">Tailwind</span>
+                                    </div>
+                                </div>
+                                <div class="project-links">
+                                    <a
+                                        class="link"
+                                        href="https://github.com/DreXtrime/race-info-screens"
+                                        target="_blank">
+                                        GitHub
+                                        <span class="link-arrow">↗</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="project">
+                                <div class="project-left">
+                                    <a class="project-title" href="https://github.com/DreXtrime" target="_blank">
+                                        More on GitHub
+                                        <span class="link-arrow">↗</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+
+                    <footer>
+                        <a class="footer-link" href="https://github.com/DreXtrime" target="_blank">GitHub</a>
+                        <a class="footer-link" href="https://www.linkedin.com/in/tanel-erik-neitov/" target="_blank">
+                            LinkedIn
+                        </a>
+                        <a class="footer-link" href="mailto:tanel.neitov@gmail.com">email-me</a>
+                        <a
+                            class="footer-link"
+                            id="startBtn2"
+                            href="#"
+                            style="font-style: italic; font-weight: bold; color: #33c74e"
+                            title="You have found an Easter egg">
+                            <span class="win-icon">
+                                <img src="windows.svg" alt="Icon" style="width: 10px; height: 10px" />
+                            </span>
+                            start
+                        </a>
+                    </footer>
+                </div>
             </div>
         </div>
 
-        <!-- Content -->
-        <div class="card-body">
-            <header>
-                <h1 class="name">Tanel Erik <span>Neitov</span></h1>
-                <p class="bio">Always looking for the next thing to build.</p>
-                <p class="bio">Unsurprisingly also into variant sudoku:
-                    <a class="bio-link"
-                       href="https://sudokupad.app/fpuzN4IgzglgXgpiBcBOANCALhNAbO8QBUBDAOxi0QA8RVCBXNACwHsAnBAks6kF2nMGGnYBlNCQAmhFuIAEvfvBkAxCFiwyYhAMYM5TAO7IZWplloBbYkYkyAzBVsyARkwoz9mXYxgzxEAOaYYDIAjAC0iDJMxFo+mjoAdAA6xCn4DDAs5kzmgpmKACIBQTLmtGBoMhAxLJoCVcQyAG6EZj6t0f4y3t0ZWTl5LDIVUhjEXQBmLDm9Pk58TjIAFPOV4tEA5JUMhE0+aEzOPibEAlr0EHsAlNz+LBDiCADaT8AAvsjvnx9fvz8/IBabQQAHZUIE9sQEGheDAAUDaLgUCAITAofAYYi3gBdZCvf7fT6A1qI0Hgy5o6Gw+EkpHkyFUrFEhG4ACs9MpGOphN+xOB8BCHPRmLhuPxPIJfwl3zFUrlfNJ8FsQsZcOlf1lkq16pp/IAHCquVjNeqFbgDSiKcLuXLJWaEMrLQyjaK8fKWQgAGyGkXa920h0+m04t26xXI1HWpmgD3wABMQej9vg7KdnN9OolJttPOT3rTUbVvNjqcjqv+2Nx6D62VyaEyz1AWGqMDAzyeIAASnGAMJx7id2x9gcAFmHlYBzdIbfgLy7vZCA97/dQ3Z7thAE6JU9b7a7Y5HA6HrKXPc9R57INHPb1m+xk5bM7nnZBPcXq89b4HrK/H+Hq9fFcu1fDc/1Arsfw3Lcm0fPdOx/c9Vx/E8/xQ4CezQl8zzvB9pzg19EAHV9bwAy8B0/K8kLIid7yAA=="
-                       target="_blank">here's one</a>.
-                </p>
-            </header>
+        <div id="desktop-icons"></div>
 
-            <main>
-                <p class="section-label">Projects</p>
-                <div class="projects">
-
-                    <div class="project">
-                        <div class="project-left">
-                            <div class="project-title">Voyager + Cloud Cartographer</div>
-                            <p class="project-desc">My favourite project so far.</p>
-                            <p class="project-desc">Cloud Cartographer: Analysed a sample app before cloud migration,
-                                stress-tested it, measured resource usage, and produced documents covering findings,
-                                architecture recommendations, and cost estimates for AWS and GCP.</p>
-                            <p class="project-desc">Voyager: took those findings and built the actual infrastructure on
-                                GCP with Terraform, ArgoCD, GitLab CI, and a full observability stack.</p>
-                            <div class="tags">
-                                <span class="tag">GCP</span><span class="tag">Terraform</span><span class="tag">Kubernetes</span>
-                                <span class="tag">ArgoCD</span><span class="tag">GitOps</span><span class="tag">GitLab CI</span>
-                            </div>
-                        </div>
-                        <div class="project-links">
-                            <a class="link" href="https://github.com/DreXtrime/cloud-cartographer" target="_blank">Cartographer
-                                <span class="link-arrow">↗</span></a>
-                            <a class="link" href="https://github.com/DreXtrime/voyager" target="_blank">Voyager <span
-                                    class="link-arrow">↗</span></a>
-                        </div>
-                    </div>
-
-                    <div class="project">
-                        <div class="project-left">
-                            <div class="project-title">Match-Me</div>
-                            <p class="project-desc">A full-stack people matching social media platform. We had to build
-                                the matching algorithm and mix real-time chat with regular database requests without
-                                them stepping on each other. Spent enough time on this one that I added a demo mode so
-                                you can try it without signing up. Received a fresh coat of polish recently, it's a
-                                solid project now.</p>
-                            <div class="tags">
-                                <span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">PostgreSQL</span>
-                                <span class="tag">React</span><span class="tag">TypeScript</span><span
-                                    class="tag">JWT</span><span class="tag">Team</span>
-                            </div>
-                        </div>
-                        <div class="project-links">
-                            <a class="link" href="https://match-me-demo.tanelneitov.eu" target="_blank">
-                                <div class="recording-light"></div>
-                                Live (Demo) <span class="link-arrow">↗</span></a>
-                            <a class="link" href="https://github.com/DreXtrime/match-me" target="_blank">GitHub <span
-                                    class="link-arrow">↗</span></a>
-                        </div>
-                    </div>
-
-                    <div class="project">
-                        <div class="project-left">
-                            <div class="project-title">Orbit</div>
-                            <p class="project-desc">Interactive 3D model of the solar system. Explore planets, adjust
-                                orbital speeds, add your own celestial bodies, and click any planet for facts and stats.
-                                Very happy with how this ended up.</p>
-                            <div class="tags">
-                                <span class="tag">Three.js</span><span class="tag">WebGL</span>
-                                <span class="tag">JavaScript</span><span class="tag">Automated deployment</span>
-                            </div>
-                        </div>
-                        <div class="project-links">
-                            <a class="link" href="https://orbit.tanelneitov.eu" target="_blank">
-                                <div class="recording-light"></div>
-                                Live <span class="link-arrow">↗</span></a>
-                            <a class="link" href="https://github.com/DreXtrime/solar-system-orbit" target="_blank">GitHub
-                                <span class="link-arrow">↗</span></a>
-                        </div>
-                    </div>
-
-                    <div class="project">
-                        <div class="project-left">
-                            <div class="project-title">Dorm Dash</div>
-                            <p class="project-desc">1–4 player real-time multiplayer arcade game. Compete against
-                                friends or AI to collect burning embers at a campsite. Shipped under a deadline, and it
-                                shows in the code, but the final product turned out great.</p>
-                            <div class="tags">
-                                <span class="tag">Multiplayer</span><span class="tag">Team project</span>
-                                <span class="tag">NPC AI</span><span class="tag">Automated deployment</span>
-                            </div>
-                        </div>
-                        <div class="project-links">
-                            <a class="link" href="https://dorm-dash.tanelneitov.eu" target="_blank">
-                                <div class="recording-light"></div>
-                                Live <span class="link-arrow">↗</span></a>
-                            <a class="link" href="https://github.com/DreXtrime/dorm-dash-game" target="_blank">GitHub
-                                <span class="link-arrow">↗</span></a>
-                        </div>
-                    </div>
-
-                    <div class="project">
-                        <div class="project-left">
-                            <div class="project-title">WebGL Gallery</div>
-                            <p class="project-desc">A virtual 3D art gallery built in Blender and rendered in the
-                                browser with Three.js. Features baked lighting, custom models, smooth camera
-                                transitions. Designed for touchscreens but works on any device.</p>
-                            <div class="tags">
-                                <span class="tag">JavaScript</span><span class="tag">Three.js</span>
-                                <span class="tag">Blender</span><span class="tag">Automated deployment</span>
-                            </div>
-                        </div>
-                        <div class="project-links">
-                            <a class="link" href="https://gallery.tanelneitov.eu" target="_blank">
-                                <div class="recording-light"></div>
-                                Live <span class="link-arrow">↗</span></a>
-                            <a class="link" href="https://github.com/DreXtrime/webgl-gallery" target="_blank">GitHub
-                                <span class="link-arrow">↗</span></a>
-                        </div>
-                    </div>
-
-                    <div class="project">
-                        <div class="project-left">
-                            <div class="project-title">Movie API</div>
-                            <p class="project-desc">A Java Spring Boot REST API storing movie info, actors, and genres
-                                in PostgreSQL. Supports filtering, validation, and pagination.</p>
-                            <div class="tags">
-                                <span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">PostgreSQL</span>
-                            </div>
-                        </div>
-                        <div class="project-links">
-                            <a class="link" href="https://github.com/DreXtrime/movie-api" target="_blank">GitHub <span
-                                    class="link-arrow">↗</span></a>
-                        </div>
-                    </div>
-
-                    <div class="project">
-                        <div class="project-left">
-                            <div class="project-title">Racetrack Info Screens</div>
-                            <p class="project-desc">A digital race management system for a physical racetrack. Tools for
-                                officials to manage races live, public screens with real-time info. Recovers gracefully
-                                from power shutdowns.</p>
-                            <div class="tags">
-                                <span class="tag">JavaScript</span><span class="tag">Socket.io</span><span class="tag">Tailwind</span>
-                            </div>
-                        </div>
-                        <div class="project-links">
-                            <a class="link" href="https://github.com/DreXtrime/race-info-screens" target="_blank">GitHub
-                                <span class="link-arrow">↗</span></a>
-                        </div>
-                    </div>
-
-                    <div class="project">
-                        <div class="project-left">
-                            <a class="project-title" href="https://github.com/DreXtrime" target="_blank">More on GitHub
-                                <span class="link-arrow">↗</span></a>
-                        </div>
-                    </div>
-
+        <!-- Taskbar -->
+        <div class="taskbar" id="taskbar">
+            <button class="start-btn" id="startBtn" aria-label="Switch to XP view">
+                <span class="win-icon">
+                    <img src="windows.svg" alt="Icon" style="width: 17px; height: 17px" />
+                </span>
+                start
+            </button>
+            <div class="taskbar-mid">
+                <div class="win-chip" id="winChip">
+                    <span class="win-icon">
+                        <img src="firefox_icon.webp" alt="Icon" style="width: 14px; height: 14px" />
+                    </span>
+                    Tanel Erik Neitov — Portfolio
                 </div>
-            </main>
-
-            <footer>
-                <a class="footer-link" href="https://github.com/DreXtrime" target="_blank">GitHub</a>
-                <a class="footer-link" href="https://www.linkedin.com/in/tanel-erik-neitov/"
-                   target="_blank">LinkedIn</a>
-                <a class="footer-link" href="mailto:tanel.neitov@gmail.com">email-me</a>
-                <a class="footer-link" id="startBtn2" href="#"
-                   style="font-style: italic; font-weight: bold; color: #33c74e" title="You have found an Easter egg">
-                        <span class="win-icon">
-                            <img src="public/windows.svg" alt="Icon" style="width: 10px; height: 10px;">
-                        </span>
-                    start</a>
-            </footer>
+            </div>
+            <div class="taskbar-tray" id="clock" aria-live="off">00:00</div>
         </div>
-    </div>
-</div>
 
-<div id="desktop-icons"></div>
-
-<!-- Taskbar -->
-<div class="taskbar" id="taskbar">
-    <button class="start-btn" id="startBtn" aria-label="Switch to XP view">
-        <span class="win-icon">
-            <img src="public/windows.svg" alt="Icon" style="width: 17px; height: 17px;">
-        </span>
-        start
-    </button>
-    <div class="taskbar-mid">
-        <div class="win-chip" id="winChip">
-            <span class="win-icon">
-                <img src="public/firefox_icon.webp" alt="Icon" style="width: 14px; height: 14px;">
-            </span>
-            Tanel Erik Neitov — Portfolio
-        </div>
-    </div>
-    <div class="taskbar-tray" id="clock" aria-live="off">00:00</div>
-</div>
-
-<script src="/index.js"></script>
-
-</body>
+        <script type="module" src="/index.js"></script>
+    </body>
 </html>
