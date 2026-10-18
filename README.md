@@ -1,4 +1,4 @@
-# tanelneitov.eu
+# [tanelneitov.eu](https://tanelneitov.eu)
 
 Some simple html, js and css. gets deployed automatically.
 
