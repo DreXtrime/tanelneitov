@@ -536,6 +536,12 @@ body:not(.xp-active) .start-btn {
     line-height: 1.3;
 }
 
+@media (max-width: 620px) {
+    .d-icon {
+        display: none;
+    }
+}
+
 /* Application windows */
 .xp-window {
     opacity: 0;
